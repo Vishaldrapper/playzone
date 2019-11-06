@@ -1,0 +1,24 @@
+if __name__ == '__main__':
+    def water(v):
+        if v == 'on' or v == 'up':
+            return 1
+        else:
+            return 0
+    objects = ['fan', 'light', 'door', 'water', 'volume']
+    val = ['on', 'off', 'up', 'down']
+    cmd = 'turn the volume up'
+    z = []
+    z1 = []
+    for x in cmd.split():
+        # print(x)
+        if x in objects:
+            z = x
+        elif x in val:
+            z1 = x
+    final = str(z) + ' ' + str(z1)
+    if final not in cmd:
+        print("Invalid Command")
+    else:
+        cm = final.split()
+        print('Command is: ' + str(z) + ' ' + str(z1))
+        print(str(z) + ' ' + str(water(cm[1])))
